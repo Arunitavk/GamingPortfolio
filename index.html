@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Arunita VK | CS Student &amp; Game Developer</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Geist:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#002e6a",
+                        "outline-variant": "#4d4354",
+                        "inverse-primary": "#842bd2",
+                        "on-tertiary-fixed": "#002113",
+                        "tertiary-container": "#00a572",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2c",
+                        "surface": "#131315",
+                        "on-secondary-fixed-variant": "#004395",
+                        "on-secondary-container": "#e6ecff",
+                        "surface-bright": "#39393b",
+                        "secondary-container": "#0566d9",
+                        "secondary-fixed": "#d8e2ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#2c0051",
+                        "on-primary-container": "#400071",
+                        "primary-container": "#b76dff",
+                        "surface-dim": "#131315",
+                        "surface-tint": "#ddb7ff",
+                        "on-surface-variant": "#cfc2d6",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-tertiary": "#003824",
+                        "on-primary-fixed-variant": "#6900b3",
+                        "secondary": "#adc6ff",
+                        "primary": "#ddb7ff",
+                        "on-secondary-fixed": "#001a42",
+                        "on-background": "#e5e1e4",
+                        "inverse-surface": "#e5e1e4",
+                        "surface-container": "#201f22",
+                        "surface-container-low": "#1c1b1d",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#00311f",
+                        "surface-container-highest": "#353437",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353437",
+                        "outline": "#988d9f",
+                        "on-primary": "#490080",
+                        "inverse-on-surface": "#313032",
+                        "tertiary": "#4edea3",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "background": "#131315",
+                        "on-surface": "#e5e1e4",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "primary-fixed": "#f0dbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap-mobile": "80px",
+                        "section-gap": "160px",
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Geist"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "code-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "code-sm": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(221, 183, 255, 0.3);
+        }
+
+        .ambient-glow-purple {
+            background: radial-gradient(circle, rgba(221, 183, 255, 0.08) 0%, rgba(19, 19, 21, 0) 70%);
+        }
+
+        .ambient-glow-blue {
+            background: radial-gradient(circle, rgba(173, 198, 255, 0.08) 0%, rgba(19, 19, 21, 0) 70%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ddb7ff, #adc6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+
+        .skill-bar-fill {
+            box-shadow: 0 0 10px rgba(221, 183, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md text-body-md scroll-smooth overflow-x-hidden">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 h-20">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex justify-between items-center h-full">
+            <span class="font-display-lg text-headline-md text-primary tracking-tighter">Arunita VK</span>
+            <div class="hidden md:flex gap-gutter items-center">
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+                    href="#projects">Projects</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+                    href="#skills">Skills</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+                    href="#game-dev">Game Dev</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+                    href="#art">Outreach</a>
+                <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+                    href="#contact">Contact</a>
+                <a class="bg-primary text-on-primary px-stack-lg py-3 rounded-lg font-label-md uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 inline-block"
+                    href="https://drive.google.com/file/d/1H5W3-oqcijaVw-1obKnW14BNxT9ltFbu/view?usp=drive_link"
+                    target="_blank">Resume</a>
+            </div>
+            <button class="md:hidden text-on-surface">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="" class="w-full h-full object-cover opacity-50"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxiA0RUCnHSQ60Qt1yY_8yfDRHE986eWC6izX0ozQbgjqP3lPcJ17NSSnJYNknRYfsk2aLIh6taLRk8YLE7oDTK63vA-XBO_hrLZs3EZoJCHmhI10BlOoAdOD8SEh__M_qmE3woIYH7A_Zysw9LIuixOmrEtquGOjRlA_nHAUbXXW9E4T6m_moiWdAl2Vp6nZDDItZVYgD9jm0m46F3JjybcoH2VUZ0ecQdSG2_5ozf_0_LMXMVlmlDv9KogrE_e1bKaiQJ8sWrzQ" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center px-margin-mobile">
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md animate-fade-in">
+                <span class="block">Arunita VK</span>
+                <span class="block text-gradient">CS Student | AI Enthusiast | Aspiring Game Developer</span>
+            </h1>
+            <div class="flex flex-col md:flex-row gap-stack-lg justify-center mt-stack-lg">
+                <a class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label-md uppercase tracking-widest hover:brightness-110 transition-all shadow-lg shadow-primary/20"
+                    href="#projects">View Projects</a>
+                <a class="border border-white/20 backdrop-blur-md px-10 py-4 rounded-lg font-label-md uppercase tracking-widest hover:bg-white/5 transition-all inline-block"
+                    href="https://drive.google.com/file/d/1H5W3-oqcijaVw-1obKnW14BNxT9ltFbu/view?usp=drive_link"
+                    target="_blank">Download Resume</a>
+                <a class="border border-primary/50 text-primary px-10 py-4 rounded-lg font-label-md uppercase tracking-widest hover:bg-primary/10 transition-all"
+                    href="#contact">Contact Me</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <span class="material-symbols-outlined text-4xl">keyboard_double_arrow_down</span>
+        </div>
+    </section>
+    <!-- About / Timeline -->
+    <section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter relative">
+        <div class="ambient-glow-purple absolute -top-40 -left-40 w-96 h-96 pointer-events-none"></div>
+        <div class="mb-20">
+            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-sm">Experience &amp;
+                Education</h2>
+            <div class="w-20 h-1 bg-primary"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div
+                class="glass-card p-stack-lg rounded-xl flex flex-col gap-stack-md group transition-all duration-500 hover:-translate-y-2">
+                <span class="font-label-md text-primary uppercase tracking-widest">Ongoing</span>
+                <h3 class="font-headline-md text-headline-md">B.Tech CS Student</h3>
+                <p class="text-on-surface-variant font-body-md">Model Engineering College. Deep diving into computer
+                    architecture, data structures, and the mathematics of intelligence.</p>
+                <div class="mt-auto pt-stack-md border-t border-white/5 flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined">school</span>
+                    <span class="font-label-md">MEC</span>
+                </div>
+            </div>
+            <div
+                class="glass-card p-stack-lg rounded-xl flex flex-col gap-stack-md group transition-all duration-500 hover:-translate-y-2">
+                <span class="font-label-md text-tertiary uppercase tracking-widest">Internship</span>
+                <h3 class="font-headline-md text-headline-md">ML Intern at Keltron</h3>
+                <p class="text-on-surface-variant font-body-md">Applying machine learning models to real-world
+                    industrial datasets and optimizing neural network architectures.</p>
+                <div class="mt-auto pt-stack-md border-t border-white/5 flex items-center gap-2 text-tertiary">
+                    <span class="material-symbols-outlined">psychology</span>
+                    <span class="font-label-md">Industry Exp</span>
+                </div>
+            </div>
+            <div
+                class="glass-card p-stack-lg rounded-xl flex flex-col gap-stack-md group transition-all duration-500 hover:-translate-y-2">
+                <span class="font-label-md text-secondary uppercase tracking-widest">Leadership</span>
+                <h3 class="font-headline-md text-headline-md">Outreach Lead at GDC MEC</h3>
+                <p class="text-on-surface-variant font-body-md">Fostering a vibrant game development community through
+                    strategic outreach and collaborative workshops.</p>
+                <div class="mt-auto pt-stack-md border-t border-white/5 flex items-center gap-2 text-secondary">
+                    <span class="material-symbols-outlined">groups</span>
+                    <span class="font-label-md">Community</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills -->
+    <section class="py-section-gap bg-surface-container-lowest overflow-hidden" id="skills">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+            <div class="flex flex-col items-center mb-20 text-center">
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-sm">Technical Arsenal
+                </h2>
+                <p class="text-on-surface-variant max-w-2xl">A balanced toolkit bridging the gap between
+                    high-performance code and immersive storytelling.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <!-- Skill Category -->
+                <div class="flex flex-col gap-stack-lg">
+                    <h4 class="font-headline-md text-primary flex items-center gap-3">
+                        <span class="material-symbols-outlined">code</span> Programming
+                    </h4>
+                    <div class="flex flex-col gap-stack-md">
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">Python</span>
+                                <span class="font-code-sm text-primary">Advanced</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary skill-bar-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">C Programming</span>
+                                <span class="font-code-sm text-primary">Advanced</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary skill-bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">JavaScript</span>
+                                <span class="font-code-sm text-primary">Intermediate</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary skill-bar-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Category -->
+                <div class="flex flex-col gap-stack-lg">
+                    <h4 class="font-headline-md text-tertiary flex items-center gap-3">
+                        <span class="material-symbols-outlined">robot</span> AI &amp; ML
+                    </h4>
+                    <div class="flex flex-col gap-stack-md">
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">PyTorch / TensorFlow</span>
+                                <span class="font-code-sm text-tertiary">Proficient</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-tertiary skill-bar-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">Computer Vision</span>
+                                <span class="font-code-sm text-tertiary">Specialized</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-tertiary skill-bar-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">NLP</span>
+                                <span class="font-code-sm text-tertiary">Basics</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-tertiary skill-bar-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Category -->
+                <div class="flex flex-col gap-stack-lg">
+                    <h4 class="font-headline-md text-secondary flex items-center gap-3">
+                        <span class="material-symbols-outlined">videogame_asset</span> Game Dev
+                    </h4>
+                    <div class="flex flex-col gap-stack-md">
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">Unity / Unreal Engine</span>
+                                <span class="font-code-sm text-secondary">Basics</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary skill-bar-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">Blender 3D</span>
+                                <span class="font-code-sm text-secondary">Intermediate</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary skill-bar-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-label-md">Figma</span>
+                                <span class="font-code-sm text-secondary">Expert</span>
+                            </div>
+                            <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary skill-bar-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Projects -->
+    <section class="py-section-gap relative" id="projects">
+        <div class="ambient-glow-blue absolute top-1/2 right-0 w-[600px] h-[600px] pointer-events-none opacity-50">
+        </div>
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-stack-md">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-sm">Featured Work
+                    </h2>
+                    <p class="text-on-surface-variant max-w-xl">A collection of research projects and software solutions
+                        developed at the intersection of AI and human experience.</p>
+                </div>
+                <span class="font-label-md text-primary tracking-widest uppercase mb-2">Portfolio 2024</span>
+            </div>
+            <div class="grid grid-cols-1 gap-12">
+                <!-- Project 1 -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-700">
+                    <div class="lg:w-3/5 overflow-hidden">
+                        <img alt=""
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI4PgHtN1MiGKix_BFc00UXZ0IbrahNiUD_pI0Dew3MW9v4TNsAs6pp05Du2jru0hfznl7gzU6W6yS3kL8tp2W58TKYv_hezfu50LsaOg8_N2mboijtE7QLy-z1OHC3EKOgr8Agk4LAnimIRPTIxZ8ml-jTTrBpfkOEfF6D4lqKhOYpGPoXqIG5F8uRW3jQr8n0dbU3CoA8zbX3D8WH6Ou2PSff5de06Mt020zWI7RMQIwuuoLyP06NmH6qNs3MaQdcuvYtUtvK4w" />
+                    </div>
+                    <div class="lg:w-2/5 p-12 flex flex-col justify-center">
+                        <div class="flex gap-stack-sm mb-stack-lg">
+                            <span
+                                class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-code-sm uppercase">Computer
+                                Vision</span>
+                            <span
+                                class="px-3 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded-full text-code-sm uppercase">AI</span>
+                        </div>
+                        <h3 class="font-display-lg text-headline-lg mb-stack-md">FaceInsight</h3>
+                        <p class="text-on-surface-variant mb-10 text-body-lg">A real-time facial analysis system
+                            utilizing advanced deep learning architectures to detect demographic markers and emotive
+                            states with high precision and low latency.</p>
+                        <div class="flex gap-stack-lg">
+                            <button
+                                class="bg-primary text-on-primary px-8 py-3 rounded font-label-md uppercase tracking-wider">Case
+                                Study</button>
+                            <a href="https://github.com/Arunitavk/KELTRON-ML.git" target="_blank"
+                                rel="noopener noreferrer"
+                                class="border border-white/20 px-8 py-3 rounded font-label-md uppercase tracking-wider flex items-center gap-2 hover:bg-white/5 transition-colors">
+                                <span class="material-symbols-outlined">link</span> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 & 3 Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                    <div class="glass-card rounded-2xl p-10 flex flex-col h-full">
+                        <div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-3xl text-secondary">hub</span>
+                        </div>
+                        <a href="https://luminary-notes.lovable.app/" target="_blank"
+                            class="font-headline-md mb-stack-md hover:text-primary transition-colors inline-block underline decoration-primary">Meeting
+                            Intelligence Hub</a>
+                        <p class="text-on-surface-variant mb-10">AI-driven platform for transcribing, summarizing, and
+                            deriving actionable insights from corporate meetings using NLP models.</p>
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-code-sm">OpenAI
+                                API</span>
+                            <span
+                                class="px-2 py-1 bg-white/5 border border-white/10 rounded text-code-sm">Next.js</span>
+                            <span
+                                class="px-2 py-1 bg-white/5 border border-white/10 rounded text-code-sm">FastAPI</span>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-10 flex flex-col h-full">
+                        <div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-3xl text-tertiary">brush</span>
+                        </div>
+                        <a target="_blank"
+                            class="font-headline-md mb-stack-md hover:text-primary transition-colors inline-block underline decoration-primary"
+                            href="https://pencilpassionarts.onrender.com">Pencil
+                            Passion</a>
+                        <p class="text-on-surface-variant mb-10">A digital ecosystem for artists to showcase and
+                            monetize their traditional sketches, featuring a custom marketplace engine.</p>
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span
+                                class="px-2 py-1 bg-white/5 border border-white/10 rounded text-code-sm">Fullstack</span>
+                            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-code-sm">UI/UX</span>
+                            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-code-sm">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Game Dev Section -->
+    <section class="py-section-gap bg-surface-container-low relative" id="game-dev">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+            <div class="text-center mb-20">
+                <h2 class="font-display-lg text-headline-lg mb-stack-sm">Interactive Worlds</h2>
+                <p class="text-on-surface-variant">Where technical complexity meets visual fidelity.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Unity Card -->
+                <div class="glass-card p-stack-lg rounded-xl flex flex-col">
+                    <h4 class="font-label-md text-secondary uppercase tracking-widest mb-2">Unity Engine</h4>
+                    <h3 class="font-headline-md mb-4">GameAI Sandbox</h3>
+                    <p class="text-on-surface-variant mb-6">Exploring core game AI mechanics using Unity and C#
+                        through the implementation of NPC patrol, detection, and pursuit behaviors.</p>
+                    <ul class="space-y-2 mt-auto">
+                        <li class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary">check_circle</span> Player
+                            Movement System
+                        </li>
+                        <li class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary">check_circle</span> NPC Patrol
+                            States
+                        </li>
+                    </ul>
+                </div>
+                <!-- Blender Card -->
+                <div class="glass-card p-stack-lg rounded-xl flex flex-col">
+                    <h4 class="font-label-md text-secondary uppercase tracking-widest mb-2">Asset Creation</h4>
+                    <h3 class="font-headline-md mb-4">Blender</h3>
+                    <p class="text-on-surface-variant mb-6">Exploring 3D asset creation in Blender while learning
+                        modeling workflows, materials, and game asset integration.</p>
+                    <ul class="space-y-2 mt-auto">
+                        <li class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary">check_circle</span> Basic 3D
+                            Modeling
+                        </li>
+                        <li class="flex items-center gap-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary">check_circle</span> Material &amp;
+                            Texture Application
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+    <!-- Art Gallery -->
+    <section class="py-section-gap" id="art">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+            <div class="flex justify-between items-center mb-16">
+                <h2 class="font-headline-lg">GDC Outreach</h2>
+                <!--<button class="text-primary font-label-md uppercase tracking-wider flex items-center gap-2 group">
+                    View Full Gallery <span
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>-->
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <!-- Image 2: SCT TVM -->
+                <div class="relative rounded-2xl overflow-hidden group h-72">
+                    <img alt="SCT TVM Session"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="sct tvm.jpeg" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                        <h4 class="font-headline-md text-white">SCT TVM</h4>
+                        <p class="text-white/70">Taking Intro To GDC Session</p>
+                    </div>
+                </div>
+                <!-- Image 3: Nirmala College -->
+                <div class="relative rounded-2xl overflow-hidden group h-72">
+                    <img alt="Nirmala College Session"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="nirmala college (2).jpeg" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                        <h4 class="font-headline-md text-white">Nirmala College</h4>
+                        <p class="text-white/70">Taking Intro To GDC Session</p>
+                    </div>
+                </div>
+                <!-- Image 4: Nirmala College -->
+                <div class="relative rounded-2xl overflow-hidden group h-72">
+                    <img alt="Nirmala College Session"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="nirmala college.jpeg" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                        <h4 class="font-headline-md text-white">St Thomas Arts and Science College</h4>
+                        <p class="text-white/70">Taking Intro To GDC Session</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Leadership Section -->
+    <section class="py-section-gap bg-surface-container-highest">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+            <h2 class="font-headline-lg text-center mb-20">Community &amp; Leadership</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                <div class="flex gap-stack-lg p-10 glass-card rounded-2xl hover:bg-white/5 transition-all">
+                    <div class="flex-shrink-0 w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-3xl">campaign</span>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md mb-stack-sm">Outreach Lead, GDC MEC</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Pioneering initiatives to bring game
+                            development culture to the forefront. Organizing workshops, game jams, and industry talks
+                            for students.</p>
+                    </div>
+                </div>
+                <div class="flex gap-stack-lg p-10 glass-card rounded-2xl hover:bg-white/5 transition-all">
+                    <div class="flex-shrink-0 w-16 h-16 bg-tertiary/20 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-tertiary text-3xl">design_services</span>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md mb-stack-sm">Design Head, Thanal MEC</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Spearheading visual identity and creative
+                            direction for charitable initiatives, ensuring impactful communication of social causes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-full py-section-gap-mobile md:py-20 bg-surface-container-lowest border-t border-white/5"
+        id="contact">
+        <div
+            class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-lg">
+            <div class="text-center md:text-left">
+                <span class="font-display-lg text-headline-md text-primary block mb-stack-sm">Arunita VK</span>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2024 Arunita VK. Built for the next
+                    generation of play.</p>
+            </div>
+            <div class="flex gap-stack-lg">
+                <a class="text-tertiary font-body-md hover:text-primary transition-colors"
+                    href="https://www.linkedin.com/in/arunita-v-k-777224291/">LinkedIn</a>
+                <a class="text-tertiary font-body-md hover:text-primary transition-colors"
+                    href="https://github.com/Arunitavk">GitHub</a>
+                <!--<a class="text-tertiary font-body-md hover:text-primary transition-colors" href="#">Itch.io</a>
+                <a class="text-tertiary font-body-md hover:text-primary transition-colors" href="#">ArtStation</a>-->
+            </div>
+        </div>
+    </footer>
+    <!-- Simple Scroll Progress Bar -->
+    <div class="fixed top-0 left-0 h-1 bg-primary z-[60]" id="scroll-progress" style="width: 0%"></div>
+    <script>
+        // Progress bar logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + "%";
+        });
+
+        // Intersection Observer for fade-in effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>
